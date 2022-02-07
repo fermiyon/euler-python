@@ -1,3 +1,61 @@
+#Project euler 7
+from re import I
+
+
+def compute7():
+    #Asal mi
+    def isPrime(k):
+        return len([x for x in range(1,k+1) if k % x == 0]) == 2
+    kacinci = 10001
+    listPrime = []
+    notfound = True
+    i = 2
+    while notfound:
+        if isPrime(i):
+            listPrime.append(i)
+            #print(f"asal, {i}")
+            if len(listPrime) == kacinci:
+                notfound = False
+        i = i + 1
+        #print(i)
+    #Listenin sonuncusunu dondur.
+    return listPrime.pop()
+print(compute7())
+#Project euler 6
+def compute6():
+    def sumSquareDiff(x):
+        list1 = list(range(1,x +1))
+        sum1 = sum(list1)
+        sum1squared= sum1 * sum1
+        squarelist = list(map(lambda k: k*k,list1))
+        squarelistsum = sum(squarelist)
+        #print(sum1)
+        #print(squarelistsum)
+        ssd = sum1squared - squarelistsum
+        return ssd
+    return sumSquareDiff(100)
+#print(compute6())
+
+#Project euler 5
+def compute5():
+    list1 = list(range(1,10+1))
+    notfound = True
+    i = 2
+    boollist = []
+    num1 = 0
+    def evenlyDivisible(x,y):
+        return x % y == 0
+    while notfound:
+        if len([x for x in list1 if i % x == 0]) == len(list1):
+            notfound = False
+            num1 = i
+        else:
+            i = i + 1
+            #print(i)
+    return i
+#print(compute5())
+
+
 #Project euler 4
 def compute4():
     #Uc haneli sayilar
@@ -13,7 +71,7 @@ def compute4():
     maks = max(polindromes)
     return maks
 
-print(compute4())
+#print(compute4())
 
 #Project euler 1
 def compute():
