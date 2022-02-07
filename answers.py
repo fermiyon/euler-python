@@ -1,7 +1,4 @@
 #Project euler 7
-from re import I
-
-
 def compute7():
     #Asal mi
     def isPrime(k):
